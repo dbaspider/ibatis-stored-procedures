@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.mapping.StatementType;
 
@@ -36,12 +38,12 @@ public interface SPMapper {
 	Object callGetTotalCityStateIdAnnotations(Param2 param2);
 	
 	//TODO: set resultMap with annotations
-	/*@Select(value= "{ CALL getTotalCityStateId()}")
+	@Select(value= "{ CALL getStates()}")
 	@Options(statementType = StatementType.CALLABLE)
-	/*@Results(value = {
+	@Results(value = {
 		@Result(property="id", column="state_id"),
 		@Result(property="name", column="state_name"),
 		@Result(property="code", column="state_code"),
-	})*/
+	})
 	List<State> callGetStatesAnnotations();
 }
